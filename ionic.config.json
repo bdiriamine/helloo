@@ -1,0 +1,8 @@
+{
+  "name": "appperso",
+  "app_id": "794001a3",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
