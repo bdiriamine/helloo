@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the LoginPage page.
  *
@@ -21,5 +21,8 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-
+  login(){
+    // Your app login API web service call triggers 
+    this.navCtrl.push(TabsPage, {}, {animate: false});
+  }
 }
