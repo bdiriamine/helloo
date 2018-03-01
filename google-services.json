@@ -1,27 +1,26 @@
 {
   "project_info": {
-    "project_number": "1058889811807",
-    "firebase_url": "https://ionic3-85c72.firebaseio.com",
-    "project_id": "ionic3-85c72",
-    "storage_bucket": "ionic3-85c72.appspot.com"
+    "project_number": "11385683141",
+    "firebase_url": "https://fir-auth-9b6ea.firebaseio.com",
+    "project_id": "fir-auth-9b6ea"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1058889811807:android:c3e6f3dea330e345",
+        "mobilesdk_app_id": "1:11385683141:android:4dc83673b8516ffa",
         "android_client_info": {
-          "package_name": "com.livechat.android"
+          "package_name": "com.livechat.com"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1058889811807-8t4jg20v32injoua5jt12i4rbfr5qnjl.apps.googleusercontent.com",
+          "client_id": "11385683141-16m1hrml117lr70910sik26mn43csf78.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB29ya8RxbR_J3DONWaDNfTxhpwznXRMRY"
+          "current_key": "AIzaSyC01wUPvKBjzNz_1qwstNSJEcT0v8Yb3ds"
         }
       ],
       "services": {
