@@ -27,7 +27,8 @@ user = {} as User ;
     // Your app login API web service call triggers 
     try{
    const resultat = this.authf.auth.signInWithEmailAndPassword(user.email,user.password)
-   console.log(resultat);
+   this.navCtrl.push(TabsPage);
   }catch(e){console.error(e);}
   }
 }
+
