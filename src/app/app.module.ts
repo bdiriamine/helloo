@@ -16,6 +16,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { EditpersonPage } from '../pages/editperson/editperson';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth'
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ProfilePage } from '../pages/profile/profile';
 
 const config = {
   apiKey: "AIzaSyAc843Zf2WkoHYVn4AE4hD7RfYN878KqSA",
@@ -36,14 +38,15 @@ const config = {
     LoginPage,
     SignupPage,
     EditpersonPage,
-    TabsPage
+    TabsPage,
+    ProfilePage
     
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(config),
-    AngularFireAuthModule
+    AngularFireAuthModule,AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -55,6 +58,7 @@ const config = {
     LoginPage,
     SignupPage,
     EditpersonPage,
+    ProfilePage,
     TabsPage
   ],
   providers: [

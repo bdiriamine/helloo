@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { User } from '../../model/user';
 import { AngularFireAuth } from 'angularfire2/auth'
+import { WelcomePage } from '../welcome/welcome';
 
 /**
  * Generated class for the SignupPage page.
@@ -28,7 +29,7 @@ export class SignupPage {
       
     
 const result = await this.authf.auth.createUserAndRetrieveDataWithEmailAndPassword(user.email,user.password);
-
+this.navCtrl.setRoot(WelcomePage);
 }catch(e){
   console.error(e);
   

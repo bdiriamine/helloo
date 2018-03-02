@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { User } from '../../model/user';
 import { AngularFireAuth } from 'angularfire2/auth'
+import { ProfilePage } from '../profile/profile';
 /**
  * Generated class for the LoginPage page.
  *
@@ -27,7 +28,7 @@ user = {} as User ;
     // Your app login API web service call triggers 
     try{
    const resultat = this.authf.auth.signInWithEmailAndPassword(user.email,user.password)
-   this.navCtrl.push(TabsPage);
+   this.navCtrl.setRoot(ProfilePage);
   }catch(e){console.error(e);}
   }
 }
