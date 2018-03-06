@@ -11,12 +11,18 @@
   <ion-grid >
     <ion-row>
       <ion-col center text-center>
-        <button ion-button full color="success" (click)="signup()">Sign up</button>
+        <button ion-button full color="light" (click)="signup()">Sign up</button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col center text-center>
-        <button ion-button full color="lightText" (click)="login()">Log in</button>
+        <button ion-button full color="light" (click)="login()">Log in</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col center text-center>
+        <ion-icon name="logo-facebook"></ion-icon>
+        <button ion-button full color="lightText" (click)="loginFB()">authentication by facebook    </button>
       </ion-col>
     </ion-row>
   </ion-grid>

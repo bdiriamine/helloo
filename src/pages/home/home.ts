@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, App, ToastController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { WelcomePage } from '../welcome/welcome';
 
 @Component({
   selector: 'page-home',
@@ -13,8 +14,8 @@ export class HomePage {
   }
   logout(){
     // Remove API token 
-    const root = this.app.getRootNav();
-    root.popToRoot();
+    this.app.getRootNav().setRoot(WelcomePage);
+    
 }
 ionViewDidLoad() {
   console.log('ionViewDidLoad HomePage');

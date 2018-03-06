@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { SignupPage } from '../signup/signup';
+import { AngularFireAuth } from 'angularfire2/auth';
+import firebase from 'firebase';
+import { HomePage } from '../home/home';
+import { ProfilePage } from '../profile/profile';
 /**
  * Generated class for the WelcomePage page.
  *
@@ -15,8 +19,14 @@ import { SignupPage } from '../signup/signup';
   templateUrl: 'welcome.html',
 })
 export class WelcomePage {
+  getinfo = {
+    displayName :'',
+    email :'',
+    photoURL :'',
+    logedin : false
+  };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private authf:AngularFireAuth ) {
   }
 
   ionViewDidLoad() {
@@ -27,5 +37,22 @@ export class WelcomePage {
     }
     signup(){
       this.navCtrl.push(SignupPage);
+      }
+      loginFB(){
+this.authf.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider()).then(res =>{console.log(res);
+  
+  this.getinfo.displayName = res.user.displayName;
+  this.getinfo.photoURL=res.user.photoURL;
+  this.getinfo.email = res.user.email;
+  this.getinfo.logedin = true;
+  this.navCtrl.push(ProfilePage,{
+    name : this.getinfo.displayName,
+    email : this.getinfo.email,
+    photoURL : this.getinfo.photoURL,
+     bolez : this.getinfo.logedin
+  });
+
+
+}  ) 
       }
 }

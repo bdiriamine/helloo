@@ -18,12 +18,22 @@ import { HomePage } from '../home/home';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
+  getinfo = {
+    displayName :'',
+    email :'',
+    photoURL :'',
+    logedin : false
+  };
 profile = {} as Profile ; 
   constructor(private auth :AngularFireAuth,private authdata:AngularFireDatabase , public navCtrl: NavController, public navParams: NavParams) {
+  this.getinfo.displayName = this.navParams.get('name');
+  this.getinfo.email = this.navParams.get('email');
+  this.getinfo.photoURL = this.navParams.get('photoURL');
+  this.getinfo.logedin = this.navParams.get('logedin');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+    console.log(this.getinfo.displayName + " " + this.getinfo.email + " " + this.getinfo.photoURL + " " +this.getinfo.logedin);
   }
 creatprofile(){
   this.auth.authState.take(1).subscribe(auth =>{

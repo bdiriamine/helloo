@@ -14,17 +14,15 @@
 
 
 <ion-content padding id="welcome">
-<ion-item>
-  <ion-label floating > User Name </ion-label>
-  <ion-input [(ngModel)]="profile.username"></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label floating > Firs Name </ion-label>
-  <ion-input [(ngModel)]="profile.firstname"></ion-input>
-</ion-item>
-<ion-item>
-  <ion-label floating > Last Name </ion-label>
-  <ion-input [(ngModel)]="profile.lastname"></ion-input>
-</ion-item>
-<button ion-button clear block (click)="creatprofile()">Creat profile</button>
+  <ion-card item-width="100" item-height="300">
+    <img src="{{getinfo.photoURL}}" style ="width :300px ; height : 200px" >
+    <ion-card-content>
+      <ion-card-title>
+       {{getinfo.displayName}}
+        </ion-card-title>
+      <p>
+        E-mail : {{ getinfo.email }} 
+      </p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
