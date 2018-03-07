@@ -8,6 +8,7 @@
 
   <ion-navbar>
     <ion-title>profile</ion-title>
+    <button ion-button color="primary" (click)="logout()">Logout</button>
   </ion-navbar>
 
 </ion-header>
@@ -15,14 +16,26 @@
 
 <ion-content padding id="welcome">
   <ion-card item-width="100" item-height="300">
-    <img src="{{getinfo.photoURL}}" style ="width :300px ; height : 200px" >
+      <ion-item>
+      <ion-avatar item-start>
+    <img src="{{getinfo.photoURL}}"  >
+      </ion-avatar>
+      </ion-item>
     <ion-card-content>
       <ion-card-title>
-       {{getinfo.displayName}}
+       User Name : {{getinfo.displayName}}
         </ion-card-title>
       <p>
-        E-mail : {{ getinfo.email }} 
+        E-mail : {{ getinfo.email }} <br>
+        Connected : {{getinfo.logedin}}
       </p>
     </ion-card-content>
   </ion-card>
+ 
 </ion-content>
+<ion-tabs  >
+    
+    <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>
+    
+  </ion-tabs>
