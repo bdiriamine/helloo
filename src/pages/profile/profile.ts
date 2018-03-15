@@ -33,7 +33,7 @@ export class ProfilePage {
  
   tab3Root = ContactPage;
 profile = {} as Profile ; 
-  constructor(private auth :AngularFireAuth , public navCtrl: NavController, public navParams: NavParams,public app: App,db: AngularFireDatabase) {
+  constructor( public navCtrl: NavController, public navParams: NavParams,public app: App,db: AngularFireDatabase) {
   this.getinfo.displayName = this.navParams.get('name');
   this.getinfo.email = this.navParams.get('email');
   this.getinfo.photoURL = this.navParams.get('photoURL');

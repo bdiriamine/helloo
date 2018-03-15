@@ -4,7 +4,7 @@ import { LoginPage } from '../login/login';
 import { SignupPage } from '../signup/signup';
 import { AngularFireAuth } from 'angularfire2/auth';
 import firebase from 'firebase';
-import { HomePage } from '../home/home';
+
 import { ProfilePage } from '../profile/profile';
 /**
  * Generated class for the WelcomePage page.
@@ -25,8 +25,10 @@ export class WelcomePage {
     photoURL :'',
     logedin : false
   };
+  public chatuser : any= null ;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private authf:AngularFireAuth ) {
+    firebase.auth().onAuthStateChanged(user =>{ if (user){this.chatuser= user }else {this.chatuser=null}} )
   }
 
   ionViewDidLoad() {
@@ -55,4 +57,19 @@ this.authf.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider()).then(r
 
 }  ) 
       }
+      logingoogle(){
+        this.authf.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(res =>{console.log(res);
+          this.getinfo.displayName = res.user.displayName;
+  this.getinfo.photoURL=res.user.photoURL;
+  this.getinfo.email = res.user.email;
+  this.getinfo.logedin = true;
+          this.navCtrl.push(ProfilePage,{
+            name : this.getinfo.displayName,
+            email : this.getinfo.email,
+            photoURL : this.getinfo.photoURL,
+             bolez : this.getinfo.logedin
+          });
+        
+      })
+    }
 }

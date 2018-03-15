@@ -9,7 +9,7 @@ import { WelcomePage } from '../welcome/welcome';
 })
 export class HomePage {
 
-  constructor(private authf :AngularFireAuth , private toast :ToastController, public navCtrl: NavController , public app: App) {
+  constructor(  public navCtrl: NavController , public app: App) {
 
   }
   logout(){
