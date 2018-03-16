@@ -3,10 +3,7 @@ import { Component } from '@angular/core';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
-import { ChatPage } from '../chat/chat';
-import { RoomPage } from '../room/room';
-import { AddroomPage } from '../addroom/addroom';
-import { ProfilePage } from '../profile/profile';
+import { EditpersonPage } from '../editperson/editperson';
 
 
 @Component({
@@ -14,10 +11,10 @@ import { ProfilePage } from '../profile/profile';
 })
 export class TabsPage {
 
-  tab1Root = ChatPage;
-  tab2Root = RoomPage;
-  tab3Root = ProfilePage;
- 
+  tab1Root = HomePage;
+  tab2Root = AboutPage;
+  tab3Root = ContactPage;
+  tab4Root = EditpersonPage;
 
   constructor() {
 

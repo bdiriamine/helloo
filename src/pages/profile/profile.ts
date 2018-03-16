@@ -6,8 +6,6 @@ import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import { ContactPage } from '../contact/contact';
 import { WelcomePage } from '../welcome/welcome';
 import { Observable } from 'rxjs/Observable';
-import { ChatPage } from '../chat/chat';
-import { RoomPage } from '../room/room';
  
 /**
  * Generated class for the ProfilePage page.
@@ -32,15 +30,10 @@ export class ProfilePage {
   itemsRef: AngularFireList<any>;
   items: Observable<any[]>;
    nbr : number=0;
-
-   tab1Root = ChatPage;
-   tab2Root = RoomPage;
-   tab3Root = ProfilePage;
-  
  
-  
+  tab3Root = ContactPage;
 profile = {} as Profile ; 
-  constructor( public navCtrl: NavController, public navParams: NavParams,public app: App,db: AngularFireDatabase) {
+  constructor(private auth :AngularFireAuth , public navCtrl: NavController, public navParams: NavParams,public app: App,db: AngularFireDatabase) {
   this.getinfo.displayName = this.navParams.get('name');
   this.getinfo.email = this.navParams.get('email');
   this.getinfo.photoURL = this.navParams.get('photoURL');
@@ -62,7 +55,7 @@ logout(){
   
 }
 addItem(newName: string ,nbr :number,comm:number ) {
-  this.itemsRef.push({ text: newName, nb:nbr , com : comm , user: this.getinfo.displayName , imgurl:this.getinfo.photoURL });
+  this.itemsRef.push({ text: newName, nb:nbr , com : comm  , user: this.getinfo.displayName , url : this.getinfo.photoURL });
 }
 updateItem(key: string, newText: string) {
   this.itemsRef.update(key, { text: newText });

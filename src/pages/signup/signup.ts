@@ -25,11 +25,14 @@ export class SignupPage {
     console.log('ionViewDidLoad SignupPage');
   }
   async signup(user:User){
- 
+    try{
       
     
 const result = await this.authf.auth.createUserAndRetrieveDataWithEmailAndPassword(user.email,user.password);
 this.navCtrl.setRoot(WelcomePage);
-
+}catch(e){
+  console.error(e);
+  
+}
   }
 }
