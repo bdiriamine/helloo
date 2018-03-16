@@ -18,6 +18,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth'
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ProfilePage } from '../pages/profile/profile';
+import { ChatPage } from '../pages/chat/chat';
+import { AddroomPage } from '../pages/addroom/addroom';
+import { RoomPage } from '../pages/room/room';
 
 const config = {
   apiKey: "AIzaSyAc843Zf2WkoHYVn4AE4hD7RfYN878KqSA",
@@ -36,7 +39,7 @@ const config = {
     HomePage,
     WelcomePage,
     LoginPage,
-    SignupPage,
+    SignupPage,ChatPage,RoomPage,
     EditpersonPage,
     TabsPage,
     ProfilePage
@@ -57,7 +60,7 @@ const config = {
     WelcomePage,
     LoginPage,
     SignupPage,
-    EditpersonPage,
+    EditpersonPage,ChatPage,RoomPage,
     ProfilePage,
     TabsPage
   ],
