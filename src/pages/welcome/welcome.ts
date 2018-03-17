@@ -4,7 +4,7 @@ import { LoginPage } from '../login/login';
 import { SignupPage } from '../signup/signup';
 import { AngularFireAuth } from 'angularfire2/auth';
 import firebase from 'firebase';
-import { HomePage } from '../home/home';
+
 import { ProfilePage } from '../profile/profile';
 /**
  * Generated class for the WelcomePage page.
@@ -25,11 +25,16 @@ export class WelcomePage {
     photoURL :'',
     logedin : false
   };
+  public chatuser : any= null ;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private authf:AngularFireAuth ) {
+<<<<<<< HEAD
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
     firebase.auth().languageCode = 'pt';
+=======
+    firebase.auth().onAuthStateChanged(user =>{ if (user){this.chatuser= user }else {this.chatuser=null}} )
+>>>>>>> origin/master
   }
 
   ionViewDidLoad() {
@@ -58,6 +63,7 @@ this.authf.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider()).then(r
 
 }  ) 
       }
+<<<<<<< HEAD
       loginGoogle(){
 
         firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(res =>{console.log(res);
@@ -68,12 +74,24 @@ this.authf.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider()).then(r
           this.getinfo.photoURL=res.user.photoURL;
           this.getinfo.email = res.user.email;
           this.getinfo.logedin = true;
+=======
+      logingoogle(){
+        this.authf.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(res =>{console.log(res);
+          this.getinfo.displayName = res.user.displayName;
+  this.getinfo.photoURL=res.user.photoURL;
+  this.getinfo.email = res.user.email;
+  this.getinfo.logedin = true;
+>>>>>>> origin/master
           this.navCtrl.push(ProfilePage,{
             name : this.getinfo.displayName,
             email : this.getinfo.email,
             photoURL : this.getinfo.photoURL,
              bolez : this.getinfo.logedin
           });
+<<<<<<< HEAD
+=======
+        
+>>>>>>> origin/master
       })
     }
 }
